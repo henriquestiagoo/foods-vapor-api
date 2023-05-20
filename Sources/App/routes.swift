@@ -3,11 +3,11 @@ import Vapor
 
 func routes(_ app: Application) throws {
     app.get { req async in
-        "It works!"
+        "Welcome to the Foods API 🍏🍕🍦!"
     }
 
     app.get("hello") { req async -> String in
-        "Hello, world!"
+        "Hello from the Foods API 🍏🍕🍦!"
     }
     
     try app.register(collection: FoodController())
