@@ -1,5 +1,5 @@
 # foods-vapor-api
 
-Learn how to create a web API using Swift and Vapor.
+Learn how to deploy a Vapor application.
 
-This repository contains the code sample I have used to write the article ["Getting started with Server-Side Swift with Vapor 🍏🍕🍦"](https://tiagohenriques.vercel.app/blog/server-side-swift-with-vapor)
+This repository contains the code sample I have used to write the article ["How to deploy a Vapor application ☁️"](https://tiagohenriques.vercel.app/blog/how-to-deploy-vapor-app)
