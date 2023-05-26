@@ -10,7 +10,7 @@ import Vapor
 
 struct FoodController: RouteCollection {
     func boot(routes: Vapor.RoutesBuilder) throws {
-        let foods = routes.grouped("foods")
+        let foods = routes.grouped("api", "foods")
         foods.get(use: index)
         foods.get(":foodId", use: find)
         foods.post(use: create)
