@@ -1,5 +1,5 @@
 //
-//  FrontendController.swift
+//  HomeController.swift
 //  
 //
 //  Created by Tiago Henriques on 25/05/2023.
@@ -11,12 +11,15 @@ struct HomeContext: Encodable {
     let foods: [Food]
 }
 
-struct FrontendController: RouteCollection {
+struct HomeController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         routes.get(use: get)
     }
     
     func get(req: Request) async throws -> View {
-        return try await req.view.render("Home")
+        let foods = try await Food.query(on: req.db)
+            .sort(\.$country)
+            .all()
+        return try await req.view.render("Home", HomeContext(foods: foods))
     }
 }
