@@ -1,12 +1,15 @@
 import NIOSSL
 import Fluent
 import FluentPostgresDriver
+import Leaf
 import Vapor
 
 // configures your application
 public func configure(_ app: Application) throws {
     // uncomment to serve files from /Public folder
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+    
+    app.views.use(.leaf)
 
     app.databases.use(.postgres(configuration: SQLPostgresConfiguration(
         hostname: Environment.get("DATABASE_HOST") ?? "localhost",
